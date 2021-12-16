@@ -24,7 +24,8 @@ To act as an independent wireless hub for the sensors, the Raspberry Pi can act 
 ### Mosquitto
 To organize the communication of information between the Raspberry Pi and the sensors, the Raspberry Pi ran as an MQTT broker using Mosquitto. There are several tutorials on how to set this up already, I have used the one from [randomnerdtutorials](https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/). I used the default settings.
 ### NodeRED
-The last thing needed is a way to interface with the devices in order to see what is connected and to save information. Again, several ways to do this, but I ended up using [NodeRED](https://nodered.org/docs/getting-started/raspberrypi) to take care of a lot of the heavy lifting for me. It also allow for custom scripting with JavaScript when the provided nodes do not suit your needs. You need to also install the dashboard community module to use the flow I have provided [here](/flow_twoesp32bno08x.json) to be an interface to collecting data from the sensors.
+The last thing needed is a way to interface with the devices in order to see what is connected and to save information. Again, several ways to do this, but I ended up using [NodeRED](https://nodered.org/docs/getting-started/raspberrypi) to take care of a lot of the heavy lifting for me. It also allow for custom scripting with JavaScript when the provided nodes do not suit your needs. You need to also install the [dashboard community module](https://flows.nodered.org/node/node-red-dashboard) (I used v 2.20.0) to use the flow I have provided [here](/flow_twoesp32bno08x.json) to be an interface to collecting data from the sensors.
+
 
 ## Sensor node overview
 ### Hardware
