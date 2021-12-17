@@ -1,5 +1,5 @@
 # MRI-compatible-sensors
-This is a collection of work done to create a flexible MRI compatible wireless sensor system using off the shelf components. This example shows how to simultaneously collect information from two different sensors located inside of an MRI bore. 
+This is a collection of work done to create a multi-use MRI compatible wireless sensor system using off the shelf components. This example shows how to simultaneously collect information from two different sensors located inside of an MRI bore. 
 
 # Materials needed
 - Raspberry Pi 4
@@ -31,6 +31,7 @@ The last thing needed is a way to interface with the devices in order to see wha
 ### Hardware
 ![fritzing diagram of sensor node](/assets/fritzing_schematic_sensor.png)
 A nickel free Li-ion battery (from Powerstream) is used to power an Adafruit ESP32 Feather which is connected to an Adafrut BNO08x breakout board over I2C. Four wires are needed between the Feather and BNO08x (VDD, GND, SCL, SDA). I modified the default Adafruit ESP32 Feather to have an u.FL version of the ESP32 module. This is to allow for use of an external u.FL Wi-Fi antenna, to allow the rest of the sensor node be encapsulated by a metal box to prevent MRI interference.
+All of the hardware except the antenna can be encapsulatd within a copper box to prevent interference. **Note that depending on the components you choose to use there is a chance they will heat up in such an enclosed space. Do safety temperature tests with each change you make.**
 ### Software
 I would recommend using the PlatformIO (I use it as an extension of Visual Studio Code) to manage dependencies automatically. The main.cpp file should be able to be used as a base to be able to compiile and upload using the Arduino IDE.
 The following libraries are needed, and defined in the platform.ini file.
