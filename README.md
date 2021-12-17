@@ -43,9 +43,27 @@ The PubSub client is used to talk to the Raspberry Pi's MQTT broker. The Arduino
 The Visual Studio Code version I used is 1.63.1.
 The PlatformIO version I used is Core 5.2.3 and Home 3.4.0.
 
+# Usage Instructions
+1. Connect sensor to the microcontroller.
+2. Upload proper firmware to the controller
+   - If running a new sensor with custom code, I would run a simple test sketch from a tutorial to ensure that microcontroller<->sensor communication is happening properly before adding the overhead of the wireless. Serial monitor is your friend.
+5. Plug in Raspberry Pi
+6. Wait a few minutes
+7. Connect to the raspi-webgui Wireless network. The computer will yell at you that there is no internet, but will connect to the network.
+8. Open a browser (eg, Firefox) and go to 10.10.10.10:1880/ui, a UI similar to this should pop up
+9. Before powering on the sensors, the Raspberry Pi time needs to be adjusted!
+   - Open a ssh client of your choice. I like MobaXTerm because it also allows for easy file transfer
+	 - SSH into 10.10.10.10 and log in with Pi's username/pw
+	 - Run the following command (adjust the information as necessary)
+	 - sudo date -s "Wed Nov 17 20:57:00 EDT 2021
+	 - I usually open up the computer clock to get the seconds as close as possible, having the command be for the next minute and hitting enter in the ssh terminal right when the laptop clock hits the correct time. It does not need to be exact, but it helps when plotting the data to see if the sensor is connected.
+10. Now that the time is correct, the graphs should play nicely!
+    ![example of GUI](/assets/GUI_snapshot.png)
+12. Now you can enable the 'show sensor' part in the browser then power up one of the microcontroller boards. You should now see a graph that shows the x-axis of the attached accelerometer.
+13. In order to save information, you need to fill out the file name information in the form in the user interface and hit submit.
+The folder/filename should appear above the save icon. When you are ready to save information from the sensors, you can hit the record toggle and information will start saving to the file. There is not a check to see if the file already exists, but will simply keep appending information to the filename.
+
 
 # Component Selection
 Have a magnet on hand to test the magnetic properties of components before bringing close to the MRI machine. If using a small enough magnet, you can isolate which component needs to get removed/replaced and find an appropriate replacement, such as the USB connector or battery. Not all parts will be able to be replaced. The Adafruit ATWINC1500 board could not be used in a 3T magnet due to the magnetic properties of the shield and components in the wireless module. Capacitors and USB connectors are commonly magnetic, but usually have non-magnetic components also available to order, but not as common.
 
-# Security
-There are probably several security holes in this setup. At the very least I would change the default password for the Raspberry Pi and the access point, and the administrative password for RaspAP. 
