@@ -57,7 +57,7 @@ The PlatformIO version I used is Core 5.2.3 and Home 3.4.0.
    - Open a ssh client of your choice. I like MobaXTerm because it also allows for easy file transfer
 	 - SSH into 10.10.10.10 and log in with Pi's username/pw
 	 - Run the following command (adjust the information as necessary)
-	 - sudo date -s "Wed Nov 17 20:57:00 EDT 2021
+	 - sudo date -s "Wed Nov 17 20:57:00 EDT 2021"
 	 - I usually open up the computer clock to get the seconds as close as possible, having the command be for the next minute and hitting enter in the ssh terminal right when the laptop clock hits the correct time. It does not need to be exact, but it helps when plotting the data to see if the sensor is connected.
 10. Now that the time is correct, the graphs should play nicely!
     
