@@ -15,7 +15,7 @@ This is a collection of work done to create a multi-use MRI compatible wireless 
 
 # Setup
 ## Overview
-![diagram of hardware for the wireless system](/assets/blockdiagram.png)
+![diagram of hardware for the wireless system](/assets/blockdiagram.jpg)
 The Raspberry Pi acts as a center to collect and save data from all of the different wireless sensor nodes. Each of the feathers can be connected to a number of different sensors, limited by whatever protocol the sensor needs in order to work, whether that be GPIO pins with SPI, or intersections with I2C, or clock speed depending on your desired sampling rate.
 ## Raspberry Pi Overview
 There's a few modules that are needed on the Pi to function. Below are instructions on how to install the modules, and the code for the NodeRED flow is in the repository.
