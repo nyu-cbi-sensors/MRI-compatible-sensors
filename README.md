@@ -52,6 +52,7 @@ The PlatformIO version I used is Core 5.2.3 and Home 3.4.0.
 6. Wait a few minutes
 7. Connect to the raspi-webgui Wireless network. The computer will yell at you that there is no internet, but will connect to the network.
 8. Open a browser (eg, Firefox) and go to 10.10.10.10:1880/ui, a UI similar to this should pop up
+	![example of GUI](/assets/GUI_snapshot.png)
 9. Before powering on the sensors, the Raspberry Pi time needs to be adjusted!
    - Open a ssh client of your choice. I like MobaXTerm because it also allows for easy file transfer
 	 - SSH into 10.10.10.10 and log in with Pi's username/pw
@@ -59,7 +60,7 @@ The PlatformIO version I used is Core 5.2.3 and Home 3.4.0.
 	 - sudo date -s "Wed Nov 17 20:57:00 EDT 2021
 	 - I usually open up the computer clock to get the seconds as close as possible, having the command be for the next minute and hitting enter in the ssh terminal right when the laptop clock hits the correct time. It does not need to be exact, but it helps when plotting the data to see if the sensor is connected.
 10. Now that the time is correct, the graphs should play nicely!
-    ![example of GUI](/assets/GUI_snapshot.png)
+    
 12. Now you can enable the 'show sensor' part in the browser then power up one of the microcontroller boards. You should now see a graph that shows the x-axis of the attached accelerometer.
 13. In order to save information, you need to fill out the file name information in the form in the user interface and hit submit.
 The folder/filename should appear above the save icon. When you are ready to save information from the sensors, you can hit the record toggle and information will start saving to the file. There is not a check to see if the file already exists, but will simply keep appending information to the filename.
